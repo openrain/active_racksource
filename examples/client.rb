@@ -1,23 +1,20 @@
 # ActiveResource client for RESTful web service
-#%w( rubygems active_resource racksource thin ).each {|lib| require lib }
+%w( rubygems active_resource racksource thin ).each {|lib| require lib }
+require '/home/remi/projects/remi/rackbox/lib/rackbox'
+RackBox.verbose = true
 
-require 'rubygems'
-require 'active_resource'
-require 'thin'
-
-#class Dog < ActiveResource::Base
-#end
+# these need to be namespaced!
+module EOL
+  module API
+    class Dog < ActiveResource::Base
+    end
+  end
+end
 
 # HTTP
-#ActiveResource::Base.site = "http://localhost:3001/"
+ActiveResource::Base.site = "http://localhost:3001/"
 
 # RACK
-rack_app = Rack::Adapter::Rails.new :root => 'rails'
-#ActiveResource::Base.app = rack_app
+ActiveResource::Base.app = Rack::Adapter::Rails.new :root => 'rails'
 
-puts "quick test ... "
-puts "rack app OK?"
-req = Rack::MockRequest.new rack_app
-puts "doing a get ..."
-resp = req.get('/dogs.xml')
-puts "ok? #{ resp.status }"
+puts "rack app OK? #{ Rack::MockRequest.new(ActiveResource::Base.app).get('/dogs.xml').status }"

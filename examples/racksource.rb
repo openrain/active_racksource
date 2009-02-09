@@ -33,7 +33,6 @@ class ActiveRacksource
     end
 
     def method_missing name, *args
-      puts "adked response for #{ name.inspect }, #{ args.inspect }"
       @rack_response.send name, *args
     end
   end
@@ -50,18 +49,40 @@ class ActiveRacksource
     # app: a Rack application
     #
     def initialize app = ActiveResource::Base.app
-      @app = app
+      @app = RackBox::App.new app
     end
 
-    def request
-      Rack::MockRequest.new @app
-    end
+    #def request
+    #  Rack::MockRequest.new @app
+    #end
 
-    def method_missing name, *args
-      puts "ActiveRacksource::HTTP instance called with: #{ name.inspect }, #{ args.inspect }"
-      puts "request.send #{name.inspect}, #{args.inspect}"
-      rack_response = request.send name, *args
-      puts "rack_response status: #{ rack_response.status }"
+    def method_missing method, url, *args
+      
+      case args.length
+      when 0
+        headers = { }
+      when 1
+        headers = args.first
+      when 2
+        if args.last.is_a?Hash
+          headers = args.last
+          data    = args.first
+        else
+          raise "not sure howto #{ method.inspect } url:#{ url.inspect } with these args:#{ args.inspect }"
+        end
+      else
+        raise "not sure howto #{ method.inspect } url:#{ url.inspect } with these args:#{ args.inspect }"
+      end
+
+      request_options = { }
+      request_options[:method] = method
+      request_options[:data]   = data   if data
+      request_options.merge!( headers ) if headers
+
+      rack_response = @app.request url, request_options
+      #puts "response status: #{ rack_response.status }"
+      #puts "response body: #{ rack_response.body }"
+
       ActiveRacksource::Response.new rack_response
     end
 
@@ -77,7 +98,6 @@ class ActiveRacksource
     module ClassMethods
       
       def app= rack_app
-        puts "set app: #{ rack_app }"
         @rack_app = rack_app
       end
 
@@ -124,4 +144,4 @@ class ActiveRacksource
 end
 
 ActiveResource::Base.send       :include, ActiveRacksource::Base
-#ActiveResource::Connection.send :include, ActiveRacksource::Connection
+ActiveResource::Connection.send :include, ActiveRacksource::Connection
