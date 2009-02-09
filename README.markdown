@@ -16,7 +16,7 @@ Here's an example, let's define a simple [ActiveResource][] library
     class Dog < ActiveResource::Base
     end
 
-If you run the following comment, it will runs over HTTP and actually request http://lots-of-dogs.com/dogs.xml 
+If you run the following command, it will runs over HTTP and actually request http://lots-of-dogs.com/dogs.xml 
 
     >> Dog.find( :all ).length
     => 1462
