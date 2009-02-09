@@ -1,0 +1,3 @@
+...
+
+NOTE TO SELF: should run specs against a restful rails app and a restful sinatra app, cause they're both easy to make resourceful  :P
