@@ -32,10 +32,8 @@ And run the command again ...
     >> Dog.find( :all ).length
     => 5
 
-Then it runs against the [Rack][] application, not over any TCP or anything!  This is great for testing 
-your [ActiveResource][] APIs for *your* web applications.  If you don't have the code for the web application 
-your API calls, then you won't find this useful.  This is good if you're wanting to test your own 
-web appliction's API.
+Then it runs against the [Rack][] application, not over any TCP or anything! 
+This is great for creating & testing [ActiveResource][] APIs for your web applications. 
 
 Cool, how should I get started?
 -------------------------------
