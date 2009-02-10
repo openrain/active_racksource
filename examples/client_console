@@ -1,8 +1,0 @@
-#! /bin/bash
-
-echo 'Dog is an ActiveResource::Base class'
-echo ''
-echo 'Try `Dog.find :all`'
-echo ''
-
-irb -r client.rb
