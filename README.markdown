@@ -1,9 +1,6 @@
 ActiveRacksource
 ================
 
-NOT COMPLETE - CHECK BACK REAL SOON!
-====================================
-
 Active**Rack**source is a [Rack][] backend for [ActiveResource][].
 
 Ok ... What does that mean?
