@@ -2,14 +2,14 @@
 
 Gem::Specification.new do |s|
   s.name = %q{active_racksource}
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["remi"]
   s.date = %q{2009-02-09}
   s.description = %q{Rack backend for ActiveResource for testing RESTful Rack APIs}
   s.email = %q{remi@remitaylor.com}
-  s.files = ["Rakefile", "README.markdown", "LICENSE", "lib/active_racksource.rb", "lib/active_racksource", "lib/active_racksource/http.rb", "lib/active_racksource/active_racksource.rb", "lib/active_racksource/base.rb", "lib/active_racksource/connection.rb", "lib/active_racksource/response.rb"]
+  s.files = ["Rakefile", "VERSION.yml", "README.markdown", "LICENSE", "lib/active_racksource.rb", "lib/active_racksource", "lib/active_racksource/http.rb", "lib/active_racksource/active_racksource.rb", "lib/active_racksource/base.rb", "lib/active_racksource/connection.rb", "lib/active_racksource/response.rb"]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/openrain/active_racksource}
   s.rdoc_options = ["--inline-source", "--charset=UTF-8"]
