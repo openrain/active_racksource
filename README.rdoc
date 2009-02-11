@@ -34,6 +34,10 @@ This is great for creating & testing ActiveResource APIs for your web applicatio
 
 Read the RDoc[http://openrain.github.com/active_racksource]
 
+== History
+
+See the CHANGELOG[link:files/CHANGELOG.html]
+
 == Cool, how should I get started?
 
 Watch the screencast[http://remi.org/2009/02/10/test-your-activeresource-api-with-activeracksource.html]
