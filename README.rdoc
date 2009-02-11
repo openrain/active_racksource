@@ -32,7 +32,7 @@ This is great for creating & testing ActiveResource APIs for your web applicatio
 
 == Documentation
 
-Read the RDoc[http://openrain.github.com/activerecord-comments]
+Read the RDoc[http://openrain.github.com/active_racksource]
 
 == Cool, how should I get started?
 
