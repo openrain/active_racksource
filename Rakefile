@@ -7,8 +7,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
     s.name        = "active_racksource"
-    s.summary     = "Rack backend for ActiveResource for testing RESTful Rack APIs"
-    s.email       = "remi@remitaylor.com"
+    s.summary     = "Rack backend for ActiveResource"
+    s.email       = "remi.taylor@openrain.com"
     s.homepage    = "http://github.com/openrain/active_racksource"
     s.description = "Rack backend for ActiveResource for testing RESTful Rack APIs"
     s.authors     = %w( remi )
