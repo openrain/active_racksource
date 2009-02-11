@@ -30,6 +30,10 @@ And run the command again ...
 Then it runs against the Rack application, not over any TCP or anything! 
 This is great for creating & testing ActiveResource APIs for your web applications. 
 
+== Documentation
+
+Read the RDoc[http://openrain.github.com/activerecord-comments]
+
 == Cool, how should I get started?
 
-... ( documentation coming soon! ) ...
+Watch the screencast[http://remi.org/2009/02/10/test-your-activeresource-api-with-activeracksource.html]
